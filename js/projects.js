@@ -697,19 +697,17 @@ document.addEventListener('DOMContentLoaded', () => {
   async function renderProjects(projects) {
     grid.innerHTML = '';
     
-    // Separate events, products and regular projects
+    // Separate events, services, and regular projects
     const events = projects.filter(p => p.isEvent);
-    const products = projects.filter(p => p.isProduct);
-    const regularProjects = projects.filter(p => !p.isEvent && !p.isProduct);
-    
-    // Interleave events, products and projects
-    const maxLen = Math.max(events.length, products.length, regularProjects.length);
+    const services = projects.filter(p => p.isService);
+    const regularProjects = projects.filter(p => !p.isEvent && !p.isService);
+    // Interleave events, services, and projects
+    const maxLen = Math.max(events.length, services.length, regularProjects.length);
     const eventTemplate = document.getElementById('event-tile-template');
     for (let i = 0; i < maxLen; i++) {
       if (i < regularProjects.length) {
         const project = regularProjects[i];
         const card = template.content.cloneNode(true).querySelector('.project-card');
-        // Add CTRL Picks badge if applicable
         if (project.ctrlPick) {
           const badge = document.createElement('div');
           badge.className = 'ctrl-pick-badge';
@@ -717,28 +715,33 @@ document.addEventListener('DOMContentLoaded', () => {
           card.prepend(badge);
         }
         card.querySelector('.project-title').textContent = project.title;
+        // Add subtitle for type
+        let subtitle = card.querySelector('.project-type-subtitle');
+        if (!subtitle) {
+          subtitle = document.createElement('div');
+          subtitle.className = 'project-type-subtitle';
+          card.querySelector('.project-title').after(subtitle);
+        }
+        subtitle.textContent = 'Startup';
         const tags = card.querySelector('.project-tags');
         tags.innerHTML = '';
-        if (project.category) {
-          tags.innerHTML += `<span class="tag tag-category">${project.category}</span>`;
+        // Only show up to 2 tags from allowed types
+        const allowedTypes = ["Service", "Business", "Startup", "Passion Project", "Nonprofit", "Website"];
+        let typeTags = [];
+        if (project.type && allowedTypes.includes(project.type)) {
+          typeTags.push({ value: project.type, class: 'tag-type' });
         }
-        const otherTags = [
-          { value: project.type, class: 'tag-type' },
-          { value: project.stage, class: 'tag-stage' },
-          { value: project.modality, class: 'tag-modality' },
-          { value: project.team, class: 'tag-team' },
-          { value: project.marketReach, class: 'tag-market' },
-          { value: project.duration, class: 'tag-duration' }
-        ].filter(tag => tag.value);
-        if (project.status && Array.isArray(project.status)) {
-          project.status.forEach(st => {
-            if (st) otherTags.push({ value: st, class: 'tag-status' });
-          });
+        if (project.extraType && allowedTypes.includes(project.extraType) && project.extraType !== project.type) {
+          typeTags.push({ value: project.extraType, class: 'tag-type' });
         }
-        otherTags.forEach((tag, index) => {
+        typeTags = typeTags.slice(0, 2);
+        typeTags.forEach((tag, index) => {
           const colorClass = `tag-color-${(index % 8) + 1}`;
           tags.innerHTML += `<span class="tag ${tag.class} ${colorClass}">${tag.value}</span>`;
         });
+        if (project.category) {
+          tags.innerHTML += `<span class="tag tag-category">${project.category}</span>`;
+        }
         card.querySelector('.project-description').textContent = project.description || '';
         card.dataset.leadName = project.leadName || '';
         card.dataset.leadRole = project.leadRole || '';
@@ -761,52 +764,68 @@ document.addEventListener('DOMContentLoaded', () => {
         card.addEventListener('click', () => projectsPage.handleCardClick(card));
         grid.appendChild(card);
       }
-      if (i < products.length) {
-        const product = products[i];
-        const card = document.createElement('div');
-        card.className = 'project-card product-card';
-        card.innerHTML = `
-          <div class="project-header">
-            <div class="business-name">${product.businessName}</div>
-            <h3 class="project-title">${product.title}</h3>
-            <div class="project-tags">
-              <span class="tag tag-type">${product.type}</span>
-              <span class="tag tag-category">${product.category}</span>
-              <span class="tag tag-price">${product.productPrice}</span>
-            </div>
-          </div>
-          <p class="project-description">${product.description}</p>
-          <a href="${product.website}" class="view-product-button" target="_blank">
-            View Product
-            <span class="button-icon">→</span>
-          </a>
-        `;
+      if (i < services.length) {
+        const service = services[i];
+        const card = template.content.cloneNode(true).querySelector('.project-card');
+        card.querySelector('.project-title').textContent = service.title;
+        const tags = card.querySelector('.project-tags');
+        tags.innerHTML = '';
+        // Only show up to 2 tags from allowed types
+        const allowedTypes = ["Service", "Business", "Startup", "Passion Project", "Nonprofit", "Website"];
+        let typeTags = [];
+        if (service.type && allowedTypes.includes(service.type)) {
+          typeTags.push({ value: service.type, class: 'tag-type' });
+        }
+        if (service.extraType && allowedTypes.includes(service.extraType) && service.extraType !== service.type) {
+          typeTags.push({ value: service.extraType, class: 'tag-type' });
+        }
+        typeTags = typeTags.slice(0, 2);
+        typeTags.forEach((tag, index) => {
+          const colorClass = `tag-color-${(index % 8) + 1}`;
+          tags.innerHTML += `<span class="tag ${tag.class} ${colorClass}">${tag.value}</span>`;
+        });
+        if (service.category) {
+          tags.innerHTML += `<span class="tag tag-category">${service.category}</span>`;
+        }
+        card.querySelector('.project-description').textContent = service.description || '';
+        card.dataset.leadName = service.leadName || '';
+        card.dataset.leadRole = service.leadRole || '';
+        card.dataset.leadEmail = service.leadEmail || '';
+        card.dataset.leadPhone = service.leadPhone || '';
+        card.dataset.preferredContact = service.preferredContact || '';
+        card.dataset.title = service.title || '';
+        card.dataset.type = service.type || '';
+        card.dataset.category = service.category || '';
+        card.dataset.stage = service.stage || '';
+        card.dataset.team = service.team || '';
+        card.dataset.modality = service.modality || '';
+        card.dataset.marketReach = service.marketReach || '';
+        card.dataset.duration = service.duration || '';
+        card.dataset.status = service.status ? service.status.join(',') : '';
+        card.dataset.description = service.description || '';
+        card.dataset.ctrlPick = service.ctrlPick ? 'true' : '';
+        card.dataset.website = service.website || '';
+        card.dataset.activityLog = service.activityLog ? JSON.stringify(service.activityLog) : '';
+        card.addEventListener('click', () => projectsPage.handleCardClick(card));
         grid.appendChild(card);
       }
       if (i < events.length) {
         const event = events[i];
-        const tile = eventTemplate.content.cloneNode(true).querySelector('.event-tile');
-        tile.querySelector('.event-tile-date').textContent = formatEventDate(event.date);
-        tile.querySelector('.event-tile-title').textContent = event.title;
-        tile.querySelector('.event-tile-desc').textContent = event.description;
+        const card = template.content.cloneNode(true).querySelector('.project-card');
+        card.querySelector('.project-title').textContent = event.title;
+        const tags = card.querySelector('.project-tags');
+        tags.innerHTML = '';
         if (event.category) {
-          tile.querySelector('.event-tile-category').textContent = event.category;
-        } else {
-          tile.querySelector('.event-tile-category').style.display = 'none';
+          tags.innerHTML += `<span class="tag tag-category">${event.category}</span>`;
         }
-        tile.style.background = event.color || '#f6f8fc';
-        tile.style.color = event.textColor || '#333';
-        tile.style.cursor = 'pointer';
-        if (event.link) {
-          tile.onclick = () => window.open(event.link, '_blank');
-        }
-        grid.appendChild(tile);
+        card.querySelector('.project-description').textContent = event.description || '';
+        card.addEventListener('click', () => projectsPage.handleCardClick(card));
+        grid.appendChild(card);
       }
     }
-    // If no projects, products or events at all
-    if (events.length === 0 && products.length === 0 && regularProjects.length === 0) {
+    if (events.length === 0 && services.length === 0 && regularProjects.length === 0) {
       const msg = document.createElement('div');
-      msg.textContent = 'No projects, products or events found.';
+      msg.textContent = 'No projects, services, or events found.';
       msg.style.color = '#888';
       msg.style.margin = '2rem 0';
       grid.appendChild(msg);

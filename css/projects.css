@@ -177,26 +177,21 @@
   }
 }
 
-.project-card,
-.event-tile {
-  display: block;
-  width: 100%;
-  margin-bottom: 1.5rem;
-  break-inside: avoid;
-  background: white;
-  border-radius: 12px;
-  padding: 20px;
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+.project-card, .event-tile, .service-tile {
+  background: #ffffff;
+  border: none;
+  position: relative;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  min-height: 280px;
+  box-shadow: 0 4px 20px rgba(121, 183, 255, 0.15);
   transition: all 0.3s ease;
-  cursor: pointer;
-  height: auto;
-  min-height: 0;
-  max-height: none;
 }
 
-.project-card:hover {
+.project-card:hover, .event-tile:hover, .service-tile:hover {
   transform: translateY(-4px);
-  box-shadow: 0 8px 24px rgba(121, 183, 255, 0.15);
+  box-shadow: 0 8px 30px rgba(121, 183, 255, 0.25);
 }
 
 /* Status Tags */
@@ -606,11 +601,6 @@
 }
 
 /* Event Tile Styles */
-.event-tile:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 8px 24px rgba(121, 183, 255, 0.15);
-}
-
 .event-tile-date {
   font-size: 0.9rem;
   font-weight: 500;
@@ -938,5 +928,14 @@
 
 .view-product-button:hover .button-icon {
   transform: translateX(4px);
+}
+
+.project-type-subtitle {
+  font-size: 0.92em;
+  color: #888;
+  font-weight: 400;
+  margin-top: 0.2em;
+  margin-bottom: 0.5em;
+  letter-spacing: 0.01em;
 }
 

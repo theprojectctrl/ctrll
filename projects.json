@@ -1,112 +1,93 @@
 [
 {
     "title": "Research Paper",
-    "description": "I, along with a few of my fellow high school students, recently completed a research paper on financial literacy. In our paper, we explored how a significant portion of the population lacks basic awareness about managing finances and tends to be lenient or careless with money. The research highlights the urgent need for better financial education, especially among youth and underserved communities. We’ve finished writing the paper and compiled a well-structured document, including a survey we conducted. However, the survey currently has only 60 responses, which we believe is too few to draw strong conclusions. We’re now working on gathering more reviews and feedback to strengthen our findings and increase the impact of our work. Our ultimate goal is to get the paper published on a reputable platform to raise awareness and promote financial being.",
+    "description": "I, along with a few of my fellow high school students, recently completed a research paper on financial literacy. In our paper, we explored how a significant portion of the population lacks basic awareness about managing finances and tends to be lenient or careless with money. The research highlights the urgent need for better financial education, especially among youth and underserved communities. We've finished writing the paper and compiled a well-structured document, including a survey we conducted...",
     "date": "2025-6-18",
     "category": "Social Impact",
     "eventCategory": "Volunteering & Service",
     "color": "#cfe9ff",
     "textColor": "#315F90",
     "link": "https://forms.gle/zKhBJkjSKJXFKqYCA",
-    "isEvent": true
-
+    "isEvent": true,
+    "subtitle": "Event"
 },
   {
     "title": "Health Youth Unity",
     "type": "Non-Profit",
     "category": "Health",
-
-    "modality": "Website",
-    "team": "Medium (6-15)",
-    "marketReach": "National",
-    "status": ["Ongoing Event"],
-
     "description": "Every child deserves a chance to smile, to play, and to dream –– even in the face of cancer. This non-profit aims to raise funds to support pediatric cancer patients and their families through care packages, hospital visits, emotional support programs, and financial assistance.",
     "leadName": "Health Youth Unity",
     "leadRole": "Founder",
     "leadEmail": "HealthYouthUnity@gmail.com",
     "preferredContact": "Email",
     "ctrlPick": false,
-    "activityLog": ["Instagram: https://www.instagram.com/healthyouthunity/"
-
-    ]
+    "activityLog": ["Instagram: https://www.instagram.com/healthyouthunity/"],
+    "subtitle": "Non-Profit"
   },
   {
     "title": "cherielle",
     "type": "Non-Profit",
     "category": "Technology",
     "stage": "Launched",
-    "modality": "Social Media",
-    "team": "Large (16+)",
-    "marketReach": "Global",
-    "status": ["Hiring", "Open Positions"],
-    "duration": "Ongoing",
     "description": "cherielle is a 501(c)(3) youth-led nonprofit that strives to 1) bridge the gender gap, 2) empower girls in computer science, and 3) foster a connected, impactful community. Not only do we post about tech, but we offer CS tutoring in several languages & AP CSA prep. We also provide lots of other resources for opportunities and initiatives!",
     "leadName": "Qwyen L",
     "leadRole": "Founder",
     "leadEmail": "cherielle.code@gmail.com",
     "preferredContact": "Email",
     "ctrlPick": false,
-    "activityLog": [
-
-    ]
+    "activityLog": [],
+    "subtitle": "Non-Profit"
   },
   {
     "title": "STEM by Step",
     "type": "Non-Profit",
     "category": "Education",
     "stage": "Launched",
-    "modality": "Website",
-    "team": "Solo",
-    "marketReach": "Global",
-    "duration": "Ongoing",
-    "status": ["Hiring"],
     "description": "A free STEM education platform providing hands-on learning experiences and project-based curriculum for underserved communities.",
     "leadName": "Genavive R.",
     "leadRole": "Founder",
     "leadEmail": "stembystep1@gmail.com",
-
     "preferredContact": "Email",
     "ctrlPick": true,
     "website": "https://stembystep.github.io/sbs/",
     "activityLog": [
       "We just released our website! Check it out in our IG bio <3"
-    ]
+    ],
+    "subtitle": "Non-Profit"
   },
   {
     "title": "Hearts of Tomorrow",
     "type": "Non-Profit",
     "category": "Social Impact",
     "stage": "Scaling",
-    "team": "Medium (6-15)",
     "description": "Striving to prevent CVD & accommodate those afflicted with practical, affordable technologies and approaches. We offer tools, projects, and programs to aid those in need. Chapter applications on the way & we are currently recruiting team members, DM on IG if interested! ",
     "leadName": "Genavive R.",
     "leadRole": "Founder",
     "leadEmail": "heartsoftomorrow@gmail.com",
     "leadPhone": "https://www.instagram.com/heartsoftmrw/",
     "preferredContact": "Both",
-    "ctrlPick": true
+    "ctrlPick": true,
+    "subtitle": "Non-Profit"
   },
   {
     "title": "TikTok Account",
     "type": "Freelance",
     "category": "Art / Design",
     "stage": "Launched",
-    "team": "Solo",
     "description": "Project description goes here. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore.",
     "leadName": "Michael Jordan",
     "leadRole": "Founder",
     "leadEmail": "michael@example.com",
     "leadPhone": "555-0126",
     "preferredContact": "Phone",
-    "ctrlPick": false
+    "ctrlPick": false,
+    "subtitle": "Freelance"
   },
   {
     "title": "ProjectFlow Pro",
     "type": "Product",
     "category": "Technology",
     "stage": "Launched",
-    "team": "Small (2-5)",
     "description": "A powerful project management tool designed to streamline your workflow and boost team productivity.",
     "leadName": "Sarah Chen",
     "leadRole": "Product Manager",
@@ -116,7 +97,8 @@
     "website": "https://example.com/product",
     "isProduct": true,
     "productPrice": "$49/month",
-    "businessName": "TechFlow Solutions"
+    "businessName": "TechFlow Solutions",
+    "subtitle": "Product"
   },
   {
     "title": "Placeholder Event 1",
@@ -127,7 +109,8 @@
     "color": "#ffdaec",
     "textColor": "#ca5e92",
     "link": "#",
-    "isEvent": true
+    "isEvent": true,
+    "subtitle": "Event"
   },
   {
     "title": "Placeholder Event 2",
@@ -138,6 +121,7 @@
     "color": "#fff3cd",
     "textColor": "#856404",
     "link": "#",
-    "isEvent": true
+    "isEvent": true,
+    "subtitle": "Event"
   }
 ] 

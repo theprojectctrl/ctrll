@@ -86,24 +86,10 @@
           <form id="update-form" action="https://formspree.io/f/movwdqka" method="POST">
             <div class="form-grid">
               <div class="form-group">
-                <label for="update-type" class="required-field">Type</label>
-                <select id="update-type" name="update-type" required>
-                  <option value="">Select type...</option>
-                  <option value="event">Event</option>
-                  <option value="project-update">Project Update</option>
-                </select>
+                <label for="title" class="required-field">Event Name</label>
+                <input type="text" id="title" name="title" required placeholder="Enter the name of your event">
               </div>
-
-              <div class="form-group event-fields" style="display: none;">
-                <label for="event-date-type">Event Date</label>
-                <select id="event-date-type" name="event-date-type">
-                  <option value="ongoing" selected>Ongoing</option>
-                  <option value="specific">Specific Date</option>
-                </select>
-                <input type="date" id="event-date" name="event-date" style="display:none;margin-top:0.5rem;">
-              </div>
-
-              <div class="form-group event-fields" style="display: none;">
+              <div class="form-group">
                 <label for="event-category" class="required-field">Event Category</label>
                 <select id="event-category" name="event-category" required>
                   <option value="">Select category...</option>
@@ -116,65 +102,44 @@
                   <option value="Project Launches & Demos">Project Launches & Demos</option>
                 </select>
               </div>
-
-              <div class="form-group">
-                <label for="title" class="required-field">Project/Event Name</label>
-                <input type="text" id="title" name="title" required placeholder="Enter the name of your project or event">
-              </div>
-
-              <div class="form-group">
-                <label for="project-status" class="required-field">Project Status</label>
-                <select id="project-status" name="project-status" required>
-                  <option value="">Select option...</option>
-                  <option value="existing">I have an existing project on the hub</option>
-                  <option value="new-event">This is a standalone event/update</option>
-                </select>
-              </div>
-
-              <div class="form-group" id="project-name-group" style="display: none;">
-                <label for="project-name">Existing Project Name on Hub</label>
-                <input type="text" id="project-name" name="project-name" placeholder="Enter your project's name as listed on the hub">
-              </div>
-
               <div class="form-group full-width">
-                <label for="description" class="required-field">Description</label>
-                <textarea id="description" name="description" required placeholder="Tell us about your event or project update. For events, include date, time, and location if applicable."></textarea>
+                <label for="description" class="required-field">Event Description</label>
+                <textarea id="description" name="description" required placeholder="Tell us about your event, its goals, and impact..." maxlength="1200"></textarea>
+                <div id="desc-char-count" style="font-size:0.92em;color:#888;margin-top:0.2em;">0/600 characters</div>
               </div>
-
-              <div class="form-group full-width">
-                <label for="contact-info" class="required-field">Contact Info</label>
-                <input type="text" id="contact-info" name="contact-info" required placeholder="Add your email, phone, or a handle you want to be contacted through">
-              </div>
-
-              <div class="form-group full-width">
-                <label><input type="checkbox" name="show-contact-info"> Show my contact info on my project/event tile & Instagram</label>
-              </div>
-
+              <script>
+                function countAlphaChars(str) {
+                  return (str.match(/[A-Za-z0-9]/g) || []).length;
+                }
+                document.addEventListener('DOMContentLoaded', function() {
+                  const desc = document.getElementById('description');
+                  const counter = document.getElementById('desc-char-count');
+                  desc.addEventListener('input', function() {
+                    const count = countAlphaChars(desc.value);
+                    counter.textContent = `${count}/600 characters`;
+                    if (count > 600) {
+                      counter.style.color = '#ff4c61';
+                    } else {
+                      counter.style.color = '#888';
+                    }
+                  });
+                });
+              </script>
               <div class="form-group full-width">
                 <label>Additional Links (optional)</label>
-                <span style="font-size:0.92em;color:#888;">Add up to 3 links (Instagram, website, or any relevant link to your project/event).</span>
+                <span style="font-size:0.92em;color:#888;">Add up to 3 links (Instagram, website, or any relevant link to your event).</span>
                 <input type="url" name="link-1" placeholder="https:// (e.g. Instagram, website, etc.)">
                 <input type="url" name="link-2" placeholder="https:// (optional)">
                 <input type="url" name="link-3" placeholder="https:// (optional)">
               </div>
-
               <div class="form-group full-width">
                 <label>Upload Logo or Images (optional)</label>
                 <span style="font-size:0.92em;color:#888;">You may upload up to 3 images (JPG, PNG, GIF, SVG). Max 5MB each.</span>
                 <input type="file" name="images" accept="image/*" multiple style="margin-top:0.5rem;" max="3">
               </div>
-
               <div class="form-group full-width">
-                <label>Share my project/event on the Project CTRL Instagram?</label>
-                <div style="display:flex;gap:1.5rem;align-items:center;">
-                  <label><input type="radio" name="share-on-instagram" value="yes"> Yes</label>
-                  <label><input type="radio" name="share-on-instagram" value="no"> No</label>
-                </div>
-              </div>
-
-              <div class="form-group full-width">
-                <label for="additional-contact" class="required-field">Additional Info for Instagram Caption or Post (optional)</label>
-                <textarea id="additional-contact" name="additional-contact" required placeholder="Any other info you want in an Instagram caption or post that isn't in your project description."></textarea>
+                <label for="additional-info">Additional Info (optional)</label>
+                <textarea id="additional-info" name="additional-info" placeholder="Any other info..."></textarea>
               </div>
             </div>
 
@@ -279,6 +244,19 @@
       formspreeEndpoint: 'https://formspree.io/f/movwdqka',
       successRedirect: 'projects.html?status=success&type=update',
       successMessage: 'Update submitted successfully! Redirecting to Project Hub...'
+    });
+
+    // Limit tag selection to 2
+    document.addEventListener('DOMContentLoaded', function() {
+      const checkboxes = document.querySelectorAll('#type-tags-group input[type="checkbox"]');
+      checkboxes.forEach(cb => {
+        cb.addEventListener('change', function() {
+          const checked = Array.from(checkboxes).filter(c => c.checked);
+          if (checked.length > 2) {
+            this.checked = false;
+          }
+        });
+      });
     });
   </script>
 </body>

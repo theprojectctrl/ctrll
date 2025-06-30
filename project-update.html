@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Share Updates & Events - Project CTRL</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    .form-help-notice {
+      margin: 1rem 0;
+      padding: 1.5rem;
+      background: rgba(255, 193, 7, 0.05);
+      border-radius: 12px;
+      display: flex;
+      gap: 1rem;
+      border: 1px dashed rgba(255, 193, 7, 0.2);
+    }
+
+    .notice-icon {
+      font-size: 1.5rem;
+      flex-shrink: 0;
+    }
+
+    .notice-content h4 {
+      color: #333;
+      font-size: 1rem;
+      margin: 0 0 0.5rem 0;
+      font-weight: 600;
+    }
+
+    .notice-content p {
+      color: #555;
+      font-size: 0.9rem;
+      line-height: 1.5;
+      margin: 0;
+    }
+
+    .notice-content a {
+      color: #79b7ff;
+      text-decoration: none;
+      font-weight: 500;
+      transition: all 0.2s ease;
+    }
+
+    .notice-content a:hover {
+      color: #5a9eff;
+      text-decoration: underline;
+    }
+
+    .form-help-notice .notice-content a {
+      color: #ff9800;
+    }
+
+    .form-help-notice .notice-content a:hover {
+      color: #f57c00;
+    }
+  </style>
+</head>
+<body class="submit-page">
+  <header class="main-header">
+    <div class="header-container">
+      <a href="index.html" class="logo">Project CTRL</a>
+      <nav class="main-nav">
+        <a href="index.html">Dashboard</a>
+        <a href="projects.html">Project Hub</a>
+        <div class="dropdown">
+          <a href="resources.html" class="dropdown-trigger">Resources ▾</a>
+          <div class="dropdown-content">
+            <a href="https://stembystep.github.io/sbs/" target="_blank">STEM by Step</a>
+          </div>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main class="submit-section">
+    <div class="content-wrapper">
+      <div class="bento-grid">
+        <div class="form-card">
+          <div class="tip-banner">
+            <span class="tip-icon">📢</span>
+            <p>Share your project updates or upcoming events with our community!</p>
+          </div>
+
+          <form id="update-form" action="https://formspree.io/f/movwdqka" method="POST">
+            <div class="form-grid">
+              <div class="form-group">
+                <label for="update-type" class="required-field">Type</label>
+                <select id="update-type" name="update-type" required>
+                  <option value="">Select type...</option>
+                  <option value="event">Event</option>
+                  <option value="project-update">Project Update</option>
+                </select>
+              </div>
+
+              <div class="form-group event-fields" style="display: none;">
+                <label for="event-date-type">Event Date</label>
+                <select id="event-date-type" name="event-date-type">
+                  <option value="ongoing" selected>Ongoing</option>
+                  <option value="specific">Specific Date</option>
+                </select>
+                <input type="date" id="event-date" name="event-date" style="display:none;margin-top:0.5rem;">
+              </div>
+
+              <div class="form-group event-fields" style="display: none;">
+                <label for="event-category" class="required-field">Event Category</label>
+                <select id="event-category" name="event-category" required>
+                  <option value="">Select category...</option>
+                  <option value="Volunteering & Service">Volunteering & Service</option>
+                  <option value="Internships & Jobs">Internships & Jobs</option>
+                  <option value="Workshops & Skill Building">Workshops & Skill Building</option>
+                  <option value="Creative Showcases & Competitions">Creative Showcases & Competitions</option>
+                  <option value="Networking & Panels">Networking & Panels</option>
+                  <option value="CTRL Events & Collabs">CTRL Events & Collabs</option>
+                  <option value="Project Launches & Demos">Project Launches & Demos</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label for="title" class="required-field">Project/Event Name</label>
+                <input type="text" id="title" name="title" required placeholder="Enter the name of your project or event">
+              </div>
+
+              <div class="form-group">
+                <label for="project-status" class="required-field">Project Status</label>
+                <select id="project-status" name="project-status" required>
+                  <option value="">Select option...</option>
+                  <option value="existing">I have an existing project on the hub</option>
+                  <option value="new-event">This is a standalone event/update</option>
+                </select>
+              </div>
+
+              <div class="form-group" id="project-name-group" style="display: none;">
+                <label for="project-name">Existing Project Name on Hub</label>
+                <input type="text" id="project-name" name="project-name" placeholder="Enter your project's name as listed on the hub">
+              </div>
+
+              <div class="form-group full-width">
+                <label for="description" class="required-field">Description</label>
+                <textarea id="description" name="description" required placeholder="Tell us about your event or project update. For events, include date, time, and location if applicable."></textarea>
+              </div>
+
+              <div class="form-group full-width">
+                <label for="contact-info" class="required-field">Contact Info</label>
+                <input type="text" id="contact-info" name="contact-info" required placeholder="Add your email, phone, or a handle you want to be contacted through">
+              </div>
+
+              <div class="form-group full-width">
+                <label><input type="checkbox" name="show-contact-info"> Show my contact info on my project/event tile & Instagram</label>
+              </div>
+
+              <div class="form-group full-width">
+                <label>Additional Links (optional)</label>
+                <span style="font-size:0.92em;color:#888;">Add up to 3 links (Instagram, website, or any relevant link to your project/event).</span>
+                <input type="url" name="link-1" placeholder="https:// (e.g. Instagram, website, etc.)">
+                <input type="url" name="link-2" placeholder="https:// (optional)">
+                <input type="url" name="link-3" placeholder="https:// (optional)">
+              </div>
+
+              <div class="form-group full-width">
+                <label>Upload Logo or Images (optional)</label>
+                <span style="font-size:0.92em;color:#888;">You may upload up to 3 images (JPG, PNG, GIF, SVG). Max 5MB each.</span>
+                <input type="file" name="images" accept="image/*" multiple style="margin-top:0.5rem;" max="3">
+              </div>
+
+              <div class="form-group full-width">
+                <label>Share my project/event on the Project CTRL Instagram?</label>
+                <div style="display:flex;gap:1.5rem;align-items:center;">
+                  <label><input type="radio" name="share-on-instagram" value="yes"> Yes</label>
+                  <label><input type="radio" name="share-on-instagram" value="no"> No</label>
+                </div>
+              </div>
+
+              <div class="form-group full-width">
+                <label for="additional-contact" class="required-field">Additional Info for Instagram Caption or Post (optional)</label>
+                <textarea id="additional-contact" name="additional-contact" required placeholder="Any other info you want in an Instagram caption or post that isn't in your project description."></textarea>
+              </div>
+            </div>
+
+            <div class="form-help-notice">
+              <div class="notice-icon">💡</div>
+              <div class="notice-content">
+                <h4>Having trouble submitting?</h4>
+                <p>If you encounter any issues with the form, you can also submit your update directly via email to <a href="mailto:contact.projectctrl@gmail.com">contact.projectctrl@gmail.com</a>. Just include all the information from this form in your email.</p>
+              </div>
+            </div>
+
+            <button type="submit" class="submit-button">
+              Submit Update
+              <span class="button-icon">→</span>
+            </button>
+          </form>
+        </div>
+
+        <div class="info-card">
+          <h3>Why Share Updates?</h3>
+          <div class="benefits-list">
+            <div class="benefit-item">
+              <span class="benefit-icon">🎯</span>
+              <div class="benefit-content">
+                <h4>Keep Your Community Engaged</h4>
+                <p>Share milestones, achievements, and upcoming events with your supporters.</p>
+              </div>
+            </div>
+
+            <div class="benefit-item">
+              <span class="benefit-icon">🤝</span>
+              <div class="benefit-content">
+                <h4>Build Connections</h4>
+                <p>Connect with other project leaders and potential collaborators.</p>
+              </div>
+            </div>
+
+            <div class="benefit-item">
+              <span class="benefit-icon">📈</span>
+              <div class="benefit-content">
+                <h4>Track Progress</h4>
+                <p>Document your journey and inspire others with your growth.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="main-footer">
+    <div class="footer-content">
+      <p>© 2025 Project CTRL | Built by and for the people without a roadmap</p>
+    </div>
+  </footer>
+
+  <script src="js/form-handler.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const updateType = document.getElementById('update-type');
+      const eventFields = document.querySelectorAll('.event-fields');
+      const eventDateType = document.getElementById('event-date-type');
+      const eventDate = document.getElementById('event-date');
+      const eventCategory = document.getElementById('event-category');
+
+      // Show/hide event fields based on type selection
+      updateType.addEventListener('change', () => {
+        const isEvent = updateType.value === 'event';
+        eventFields.forEach(field => {
+          field.style.display = isEvent ? 'block' : 'none';
+        });
+        // Update required attributes
+        eventDate.required = false;
+        eventCategory.required = isEvent;
+      });
+
+      // Show/hide date picker based on dropdown
+      eventDateType.addEventListener('change', () => {
+        if (eventDateType.value === 'specific') {
+          eventDate.style.display = 'block';
+        } else {
+          eventDate.style.display = 'none';
+        }
+      });
+
+      // Set minimum date to today for event date
+      const today = new Date().toISOString().split('T')[0];
+      eventDate.min = today;
+    });
+
+    document.getElementById('project-status').addEventListener('change', function(e) {
+      const projectNameGroup = document.getElementById('project-name-group');
+      if (e.target.value === 'existing') {
+        projectNameGroup.style.display = 'block';
+      } else {
+        projectNameGroup.style.display = 'none';
+      }
+    });
+
+    // Initialize the form handler with automatic fallback
+    new FormHandler('update-form', {
+      formspreeEndpoint: 'https://formspree.io/f/movwdqka',
+      successRedirect: 'projects.html?status=success&type=update',
+      successMessage: 'Update submitted successfully! Redirecting to Project Hub...'
+    });
+  </script>
+</body>
+</html> 

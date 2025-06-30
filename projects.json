@@ -1,4 +1,14 @@
 [
+   {
+    "title": "Placeholder Service Offering",
+    "subtitle": "Service Offering",
+    "category": "Technology",
+    "description": "This is a sample service offering to demonstrate how service tiles appear in the Project Hub. You can use this as a template for your own service listings.",
+    "leadName": "Jane Doe",
+    "leadRole": "Service Provider",
+    "leadEmail": "janedoe@example.com",
+    "ctrlPick": false
+  },
 {
     "title": "Research Paper",
     "description": "I, along with a few of my fellow high school students, recently completed a research paper on financial literacy. In our paper, we explored how a significant portion of the population lacks basic awareness about managing finances and tends to be lenient or careless with money. The research highlights the urgent need for better financial education, especially among youth and underserved communities. We've finished writing the paper and compiled a well-structured document, including a survey we conducted...",

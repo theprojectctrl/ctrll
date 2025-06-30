@@ -715,14 +715,14 @@ document.addEventListener('DOMContentLoaded', () => {
           card.prepend(badge);
         }
         card.querySelector('.project-title').textContent = project.title;
-        // Add subtitle for type
+        // Add subtitle for type (use subtitle field from data)
         let subtitle = card.querySelector('.project-type-subtitle');
         if (!subtitle) {
           subtitle = document.createElement('div');
           subtitle.className = 'project-type-subtitle';
           card.querySelector('.project-title').after(subtitle);
         }
-        subtitle.textContent = 'Startup';
+        subtitle.textContent = project.subtitle || 'Project';
         const tags = card.querySelector('.project-tags');
         tags.innerHTML = '';
         // Only show up to 2 tags from allowed types
@@ -768,6 +768,14 @@ document.addEventListener('DOMContentLoaded', () => {
         const service = services[i];
         const card = template.content.cloneNode(true).querySelector('.project-card');
         card.querySelector('.project-title').textContent = service.title;
+        // Add subtitle for type (use subtitle field from data)
+        let subtitle = card.querySelector('.project-type-subtitle');
+        if (!subtitle) {
+          subtitle = document.createElement('div');
+          subtitle.className = 'project-type-subtitle';
+          card.querySelector('.project-title').after(subtitle);
+        }
+        subtitle.textContent = service.subtitle || 'Service Offering';
         const tags = card.querySelector('.project-tags');
         tags.innerHTML = '';
         // Only show up to 2 tags from allowed types
@@ -813,6 +821,14 @@ document.addEventListener('DOMContentLoaded', () => {
         const event = events[i];
         const card = template.content.cloneNode(true).querySelector('.project-card');
         card.querySelector('.project-title').textContent = event.title;
+        // Add subtitle for type (use subtitle field from data)
+        let subtitle = card.querySelector('.project-type-subtitle');
+        if (!subtitle) {
+          subtitle = document.createElement('div');
+          subtitle.className = 'project-type-subtitle';
+          card.querySelector('.project-title').after(subtitle);
+        }
+        subtitle.textContent = event.subtitle || 'Event';
         const tags = card.querySelector('.project-tags');
         tags.innerHTML = '';
         if (event.category) {

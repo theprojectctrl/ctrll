@@ -707,40 +707,11 @@
           </div>
 
           <!-- Community Highlights -->
-          <div class="bento-card community-card">
-            <h3>Featured Projects</h3>
-            <div class="featured-projects">
-              <div class="featured-project active" data-project-id="1">
-                <div class="project-header">
-                  <h4>STEM by Step</h4>
-                  <div class="project-tags">
-                    <span class="tag tag-type">Non-Profit</span>
-                    <span class="tag tag-category">Education</span>
-                  </div>
-                </div>
-                <p class="project-description">A free STEM education platform providing hands-on learning experiences for underserved communities.</p>
-              </div>
-              <div class="featured-project" data-project-id="2">
-                <div class="project-header">
-                  <h4>Hearts of Tomorrow</h4>
-                  <div class="project-tags">
-                    <span class="tag tag-type">Non-Profit</span>
-                    <span class="tag tag-category">Social Impact</span>
-                  </div>
-                </div>
-                <p class="project-description">Empowering youth through mentorship and leadership development opportunities.</p>
-              </div>
-              <div class="featured-project" data-project-id="3">
-                <div class="project-header">
-                  <h4>Local Business Directory</h4>
-                  <div class="project-tags">
-                    <span class="tag tag-type">Business</span>
-                    <span class="tag tag-category">Technology</span>
-                  </div>
-                </div>
-                <p class="project-description">A digital platform connecting local businesses with their community.</p>
-              </div>
-            </div>
+          <div class="bento-card community-card newsletter-card" style="cursor:pointer; background: linear-gradient(105deg, #eef4ff 60%, #dbeafe 100%); border: 2px solid #79b7ff; box-shadow: 0 4px 16px rgba(121, 183, 255, 0.10); display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 220px; text-align: center; transition: box-shadow 0.3s, border 0.3s, transform 0.3s;" onclick="window.open('https://tally.so/r/n9YplK', '_blank')">
+            <div style="font-size:2.5rem; margin-bottom:1rem;">📬</div>
+            <h3 style="color:#315F90; font-size:1.35rem; font-weight:700; margin-bottom:0.5rem;">CTRL Newsletter</h3>
+            <p style="color:#315F90; font-size:1rem; margin-bottom:0.7rem;">Sign up for early updates, exclusive opportunities, and community news. Be the first to know what's next!</p>
+            <div style="color:#fff; background:#79b7ff; border-radius:100px; padding:0.6rem 1.5rem; font-weight:600; font-size:1.05rem; margin-top:0.4rem; display:inline-block; box-shadow:0 2px 8px rgba(121,183,255,0.10);">Sign Up for Early Access →</div>
           </div>
 
           <!-- Featured Categories -->
@@ -1041,49 +1012,6 @@
       });
 
       counters.forEach(counter => observer.observe(counter));
-    });
-
-    // Featured Projects Rotation
-    document.addEventListener('DOMContentLoaded', () => {
-      const featuredProjects = document.querySelectorAll('.featured-project');
-      let currentProject = 0;
-      let rotationInterval;
-
-      function showProject(index) {
-        featuredProjects.forEach(project => project.classList.remove('active'));
-        featuredProjects[index].classList.add('active');
-      }
-
-      function nextProject() {
-        currentProject = (currentProject + 1) % featuredProjects.length;
-        showProject(currentProject);
-      }
-
-      function startRotation() {
-        if (rotationInterval) clearInterval(rotationInterval);
-        rotationInterval = setInterval(nextProject, 7000);
-      }
-
-      // Initialize rotation
-      showProject(0);
-      startRotation();
-
-      // Add click handlers to featured projects
-      featuredProjects.forEach(project => {
-        project.addEventListener('click', () => {
-          const projectId = project.dataset.projectId;
-          window.location.href = `projects.html#featured-${projectId}`;
-        });
-
-        // Pause rotation on hover
-        project.addEventListener('mouseenter', () => {
-          clearInterval(rotationInterval);
-        });
-
-        project.addEventListener('mouseleave', () => {
-          startRotation();
-        });
-      });
     });
   </script>
 </body>

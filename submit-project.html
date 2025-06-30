@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Submit Project - Project CTRL</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    .submit-section {
+      padding: 2rem 0;
+    }
+
+    .form-card {
+      background: white;
+      border-radius: 16px;
+      padding: 2rem;
+      box-shadow: 0 4px 24px rgba(0, 0, 0, 0.1);
+    }
+
+    .tip-banner {
+      background: rgba(121, 183, 255, 0.1);
+      border-radius: 12px;
+      padding: 1rem;
+      margin-bottom: 2rem;
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .tip-banner .tip-icon {
+      font-size: 1.5rem;
+    }
+
+    .tip-banner p {
+      margin: 0;
+      color: #555;
+      font-size: 0.95rem;
+    }
+
+    .form-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.5rem;
+    }
+
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+
+    .form-group.full-width {
+      grid-column: 1 / -1;
+    }
+
+    .form-group label {
+      font-size: 0.9rem;
+      color: #333;
+      font-weight: 500;
+    }
+
+    .required-field::after {
+      content: '*';
+      color: #ff4c61;
+      margin-left: 0.25rem;
+    }
+
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      padding: 0.75rem;
+      border: 1px solid rgba(0, 0, 0, 0.1);
+      border-radius: 8px;
+      font-size: 0.9rem;
+      transition: all 0.2s ease;
+    }
+
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus {
+      outline: none;
+      border-color: #79b7ff;
+      box-shadow: 0 0 0 2px rgba(121, 183, 255, 0.1);
+    }
+
+    .form-group textarea {
+      min-height: 100px;
+      resize: vertical;
+    }
+
+    .visibility-boost-message {
+      margin: 1rem 0;
+    }
+
+    .boost-banner {
+      background: rgba(255, 149, 0, 0.1);
+      border-radius: 12px;
+      padding: 1rem;
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .boost-banner .boost-icon {
+      font-size: 1.5rem;
+    }
+
+    .boost-banner p {
+      margin: 0;
+      color: #555;
+      font-size: 0.95rem;
+    }
+
+    .checkbox-group {
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+      margin-top: 0.5rem;
+    }
+
+    .checkbox-option {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      cursor: pointer;
+    }
+
+    .checkbox-option input[type="checkbox"] {
+      width: 18px;
+      height: 18px;
+      border-radius: 4px;
+      border: 2px solid #ddd;
+      appearance: none;
+      -webkit-appearance: none;
+      cursor: pointer;
+      position: relative;
+      transition: all 0.2s ease;
+    }
+
+    .checkbox-option input[type="checkbox"]:checked {
+      background: #79b7ff;
+      border-color: #79b7ff;
+    }
+
+    .checkbox-option input[type="checkbox"]:checked::after {
+      content: '✓';
+      color: white;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-size: 12px;
+    }
+
+    .status-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.25rem;
+      padding: 0.25rem 0.75rem;
+      border-radius: 100px;
+      font-size: 0.75rem;
+      font-weight: 500;
+      transition: all 0.2s ease;
+    }
+
+    .status-tag.hiring {
+      background: rgba(255, 76, 97, 0.1);
+      color: #ff4c61;
+    }
+
+    .status-tag.positions {
+      background: rgba(121, 183, 255, 0.1);
+      color: #79b7ff;
+    }
+
+    .status-tag.event {
+      background: rgba(255, 149, 0, 0.1);
+      color: #ff9500;
+    }
+
+    .checkbox-option:hover .status-tag.hiring {
+      background: rgba(255, 76, 97, 0.2);
+    }
+
+    .checkbox-option:hover .status-tag.positions {
+      background: rgba(121, 183, 255, 0.2);
+    }
+
+    .checkbox-option:hover .status-tag.event {
+      background: rgba(255, 149, 0, 0.2);
+    }
+
+    .submit-button {
+      background: #79b7ff;
+      color: white;
+      border: none;
+      padding: 1rem 2rem;
+      border-radius: 100px;
+      font-size: 1rem;
+      font-weight: 500;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.75rem;
+      margin-top: 2rem;
+      transition: all 0.3s ease;
+      width: 100%;
+    }
+
+    .submit-button:hover {
+      background: #5a9eff;
+      transform: translateY(-2px);
+    }
+
+    .button-icon {
+      transition: transform 0.3s ease;
+    }
+
+    .submit-button:hover .button-icon {
+      transform: translateX(4px);
+    }
+
+    /* Social Media Notice Styles */
+    .social-media-notice {
+      margin: 2rem 0;
+      padding: 1.5rem;
+      background: rgba(121, 183, 255, 0.05);
+      border-radius: 12px;
+      display: flex;
+      gap: 1rem;
+      border: 1px dashed rgba(121, 183, 255, 0.2);
+    }
+
+    .form-help-notice {
+      margin: 1rem 0;
+      padding: 1.5rem;
+      background: rgba(255, 193, 7, 0.05);
+      border-radius: 12px;
+      display: flex;
+      gap: 1rem;
+      border: 1px dashed rgba(255, 193, 7, 0.2);
+    }
+
+    .notice-icon {
+      font-size: 1.5rem;
+      flex-shrink: 0;
+    }
+
+    .notice-content h4 {
+      color: #333;
+      font-size: 1rem;
+      margin: 0 0 0.5rem 0;
+      font-weight: 600;
+    }
+
+    .notice-content p {
+      color: #555;
+      font-size: 0.9rem;
+      line-height: 1.5;
+      margin: 0;
+    }
+
+    .notice-content a {
+      color: #79b7ff;
+      text-decoration: none;
+      font-weight: 500;
+      transition: all 0.2s ease;
+    }
+
+    .notice-content a:hover {
+      color: #5a9eff;
+      text-decoration: underline;
+    }
+
+    .form-help-notice .notice-content a {
+      color: #ff9800;
+    }
+
+    .form-help-notice .notice-content a:hover {
+      color: #f57c00;
+    }
+
+    @media (max-width: 768px) {
+      .form-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .form-card {
+        padding: 1.5rem;
+      }
+
+      .checkbox-group {
+        gap: 0.5rem;
+      }
+
+      .checkbox-option input[type="checkbox"] {
+        width: 16px;
+        height: 16px;
+      }
+
+      .social-media-notice {
+        padding: 1rem;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+      }
+
+      .notice-content h4 {
+        margin-bottom: 0.75rem;
+      }
+    }
+  </style>
+</head>
+<body class="submit-page">
+  <header class="main-header">
+    <div class="header-container">
+      <a href="index.html" class="logo">Project CTRL</a>
+      <nav class="main-nav">
+        <a href="index.html">Dashboard</a>
+        <a href="projects.html">Project Hub</a>
+        <div class="dropdown">
+          <a href="resources.html" class="dropdown-trigger">Resources ▾</a>
+          <div class="dropdown-content">
+            <a href="https://stembystep.github.io/sbs/" target="_blank">STEM by Step</a>
+          </div>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main class="submit-section">
+    <div class="content-wrapper">
+      <div class="form-card">
+        <div class="tip-banner">
+          <span class="tip-icon">💡</span>
+          <p>Share your project with our community! Fill out the form below to get started.</p>
+        </div>
+
+        <form id="submit-form" action="https://formspree.io/f/movwvvvj" method="POST">
+          <div class="form-grid">
+            <div class="form-group">
+              <label for="project-name" class="required-field">Project Name</label>
+              <input type="text" id="project-name" name="project-name" required>
+            </div>
+
+            <div class="form-group">
+              <label for="project-type" class="required-field">Project Type</label>
+              <select id="project-type" name="project-type" required>
+                <option value="">Select type...</option>
+                <option value="Startup">Startup</option>
+                <option value="Non-Profit">Non-Profit</option>
+                <option value="Business">Business</option>
+                <option value="Community">Community Initiative</option>
+                <option value="Freelance">Freelance</option>
+                <option value="Side Hustle">Side Hustle</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="category" class="required-field">Category</label>
+              <select id="category" name="category" required>
+                <option value="">Select category...</option>
+                <option value="Technology">Technology</option>
+                <option value="Education">Education</option>
+                <option value="Health">Health</option>
+                <option value="Environment">Environment</option>
+                <option value="Social Impact">Social Impact</option>
+                <option value="Art / Design">Art / Design</option>
+                <option value="Food / Culture">Food / Culture</option>
+                <option value="Wellness / Beauty">Wellness / Beauty</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="project-stage" class="required-field">Project Stage</label>
+              <select id="project-stage" name="project-stage" required>
+                <option value="">Select stage...</option>
+                <option value="Idea Phase">Idea Phase</option>
+                <option value="In Development">In Development</option>
+                <option value="Launched">Launched</option>
+                <option value="Scaling">Scaling</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="modality" class="required-field">Project Modality</label>
+              <select id="modality" name="modality" required>
+                <option value="">Select modality...</option>
+                <option value="Website">Website</option>
+                <option value="Mobile App">Mobile App</option>
+                <option value="DIY Hardware">DIY Hardware</option>
+                <option value="Social Media">Social Media</option>
+                <option value="E-commerce">E-commerce</option>
+                <option value="In-person / Offline">In-person / Offline</option>
+                <option value="Hybrid">Hybrid</option>
+                <option value="Other">Other</option>
+              </select>
+            </div>
+
+            <div class="form-group full-width">
+              <label for="description" class="required-field">Project Description</label>
+              <textarea id="description" name="description" required placeholder="Tell us about your project, its goals, and impact..."></textarea>
+            </div>
+
+            <div class="form-group full-width">
+              <label>Additional Links (optional)</label>
+              <span style="font-size:0.92em;color:#888;">Add up to 3 links (Instagram, website, or any relevant link to your project/event).</span>
+              <input type="url" name="link-1" placeholder="https:// (e.g. Instagram, website, etc.)">
+              <input type="url" name="link-2" placeholder="https:// (optional)">
+              <input type="url" name="link-3" placeholder="https:// (optional)">
+            </div>
+
+            <div class="form-group full-width">
+              <label>Upload Logo or Images (optional)</label>
+              <span style="font-size:0.92em;color:#888;">You may upload up to 3 images (JPG, PNG, GIF, SVG). Max 5MB each.</span>
+              <input type="file" name="images" accept="image/*" multiple style="margin-top:0.5rem;" max="3">
+            </div>
+
+            <div class="form-group full-width visibility-boost-message">
+              <div class="boost-banner">
+                <span class="boost-icon">🚀</span>
+                <p>The following fields are optional, but filling them out can boost your project's visibility in the Project Hub!</p>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="team-size">Team Size</label>
+              <select id="team-size" name="team-size">
+                <option value="">Select team size...</option>
+                <option value="Solo">Solo</option>
+                <option value="Small (2-5)">Small (2-5)</option>
+                <option value="Medium (6-15)">Medium (6-15)</option>
+                <option value="Large (16+)">Large (16+)</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="market-reach">Market Reach</label>
+              <select id="market-reach" name="market-reach">
+                <option value="">Select reach...</option>
+                <option value="Local">Local</option>
+                <option value="Regional">Regional</option>
+                <option value="National">National</option>
+                <option value="Global">Global</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label>Team & Event Status</label>
+              <div class="checkbox-group">
+                <label class="checkbox-option">
+                  <input type="checkbox" name="status[]" value="Hiring">
+                  <span class="status-tag hiring">🎯 Hiring</span>
+                </label>
+                <label class="checkbox-option">
+                  <input type="checkbox" name="status[]" value="Open Positions">
+                  <span class="status-tag positions">👥 Open Positions</span>
+                </label>
+                <label class="checkbox-option">
+                  <input type="checkbox" name="status[]" value="Ongoing Event">
+                  <span class="status-tag event">📅 Ongoing Event</span>
+                </label>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="duration">Project Duration</label>
+              <select id="duration" name="duration">
+                <option value="">Select duration...</option>
+                <option value="One-time">One-time</option>
+                <option value="Seasonal">Seasonal</option>
+                <option value="Ongoing">Ongoing</option>
+              </select>
+            </div>
+
+            <div class="form-group full-width">
+              <label for="contact-info" class="required-field">Contact Info</label>
+              <input type="text" id="contact-info" name="contact-info" required placeholder="Add your email, phone, or a handle you want to be contacted through">
+            </div>
+            <div class="form-group full-width">
+              <label><input type="checkbox" name="show-contact-info"> Show my contact info on my project/event tile & Instagram</label>
+            </div>
+            <div class="form-group full-width">
+              <label>Share my project/event on the Project CTRL Instagram?</label>
+              <div style="display:flex;gap:1.5rem;align-items:center;">
+                <label><input type="radio" name="share-on-instagram" value="yes"> Yes</label>
+                <label><input type="radio" name="share-on-instagram" value="no"> No</label>
+              </div>
+            </div>
+            <div class="form-group full-width">
+              <label for="additional-contact">Additional Info for Instagram Caption or Post (optional)</label>
+              <textarea id="additional-contact" name="additional-contact" placeholder="Any other info you want in an Instagram caption or post that isn't in your project description."></textarea>
+            </div>
+          </div>
+
+          <div class="social-media-notice">
+            <div class="notice-icon">📱</div>
+            <div class="notice-content">
+              <h4>Social Media Notice</h4>
+              <p>If you opt for your project to be shared on our Instagram (by checking the box above), your project will be featured on our Instagram (<a href="https://www.instagram.com/projectctrl.co/" target="_blank">@projectctrl</a>) to highlight your work and connect you with more supporters. Keep an eye out for your mentions on Instagram to see your post! If you'd prefer not to be featured or want it removed, just reply to this email within 5 days (<a href="mailto:contact.projectctrl@gmail.com">contact.projectctrl@gmail.com</a>).</p>
+            </div>
+          </div>
+
+          <div class="form-help-notice">
+            <div class="notice-icon">💡</div>
+            <div class="notice-content">
+              <h4>Having trouble submitting?</h4>
+              <p>If you encounter any issues with the form, you can also submit your project directly via email to <a href="mailto:contact.projectctrl@gmail.com">contact.projectctrl@gmail.com</a>. Just include all the information from this form in your email.</p>
+            </div>
+          </div>
+
+          <button type="submit" class="submit-button">
+            Submit Project
+            <span class="button-icon">→</span>
+          </button>
+        </form>
+      </div>
+    </div>
+  </main>
+
+  <footer class="main-footer">
+    <div class="footer-content">
+      <p>© 2025 Project CTRL | Built by and for the people without a roadmap</p>
+    </div>
+  </footer>
+
+  <script src="js/form-handler.js"></script>
+  <script>
+    // Initialize the form handler with automatic fallback
+    new FormHandler('submit-form', {
+      formspreeEndpoint: 'https://formspree.io/f/movwvvvj',
+      successRedirect: 'projects.html?status=success&type=project',
+      successMessage: 'Project submitted successfully! Redirecting to Project Hub...'
+    });
+  </script>
+</body>
+</html> 

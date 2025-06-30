@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Project Hub - Project CTRL</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/projects.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body class="dashboard">
+  <header class="main-header">
+    <div class="header-container">
+      <a href="index.html" class="logo">Project CTRL</a>
+      <nav class="main-nav">
+        <a href="index.html">Dashboard</a>
+        <a href="projects.html" class="active">Project Hub</a>
+        <div class="dropdown">
+          <a href="resources.html" class="dropdown-trigger">Resources ▾</a>
+          <div class="dropdown-content">
+            <a href="https://stembystep.github.io/sbs/" target="_blank">STEM by Step</a>
+          </div>
+        </div>
+        <a href="https://www.instagram.com/projectctrl.co/" target="_blank" class="social-nav-link">
+          <svg class="nav-icon" viewBox="0 0 24 24" width="24" height="24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect x="2" y="2" width="20" height="20" rx="5" stroke="currentColor" stroke-width="2"/>
+            <circle cx="12" cy="12" r="5" stroke="currentColor" stroke-width="2"/>
+            <circle cx="17" cy="7" r="1" fill="currentColor"/>
+          </svg>
+        </a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="dashboard-container">
+    <section class="hero-section">
+      <div class="content-wrapper">
+        <div id="submission-success" style="display: none; background: rgba(0, 200, 83, 0.1); color: #00c853; padding: 1rem; border-radius: 8px; margin-bottom: 2rem; text-align: center; font-weight: 500;">
+          Thank you for your submission! You will be notified of its upload status within 1-7 days.
+        </div>
+
+        <h1>Project Hub</h1>
+        <p class="hero-subtitle">Discover inspiring projects and connect with fellow innovators</p>
+        
+        <!-- Search Container -->
+        <div class="search-container">
+          <div class="search-bar">
+            <input type="text" id="projects-search" placeholder="Search by goal, field, tech stack..." />
+            <button class="search-button">
+              <span class="button-icon">🔍</span>
+            </button>
+          </div>
+          <div class="search-info">
+            <span class="search-results-count">Showing all projects</span>
+            <span class="search-shortcut">Press Ctrl+F to search</span>
+          </div>
+        </div>
+
+        <div class="cta-buttons">
+          <button class="primary-button filter-toggle">
+            <span class="button-icon">🏷️</span>
+            Filter by Category
+            <span class="filter-count"></span>
+          </button>
+          <button class="secondary-button clear-filters" style="margin-left: 0.5rem;">
+            Clear Filters
+            <span class="button-icon">×</span>
+          </button>
+          <a href="submit-project.html" class="secondary-button">
+            Submit Project
+            <span class="button-icon">+</span>
+          </a>
+        </div>
+
+        <div class="filter-panel" style="display: none;">
+          <div class="filter-options">
+            <label class="filter-option">
+              <input type="checkbox" name="category" value="Technology">
+              Technology
+            </label>
+            <label class="filter-option">
+              <input type="checkbox" name="category" value="Education">
+              Education
+            </label>
+            <label class="filter-option">
+              <input type="checkbox" name="category" value="Health">
+              Health
+            </label>
+            <label class="filter-option">
+              <input type="checkbox" name="category" value="Environment">
+              Environment
+            </label>
+            <label class="filter-option">
+              <input type="checkbox" name="category" value="Social Impact">
+              Social Impact
+            </label>
+            <label class="filter-option">
+              <input type="checkbox" name="category" value="Art / Design">
+              Art / Design
+            </label>
+            <label class="filter-option">
+              <input type="checkbox" name="category" value="Food / Culture">
+              Food / Culture
+            </label>
+            <label class="filter-option">
+              <input type="checkbox" name="category" value="Wellness / Beauty">
+              Wellness / Beauty
+            </label>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="dashboard-grid">
+      <div class="content-wrapper">
+        <div class="impact-metrics">
+          <div class="metric-card">
+            <div class="metric-icon">💻</div>
+            <div class="metric-value" data-target="5">5</div>
+            <div class="metric-label">Total Projects</div>
+          </div>
+          <div class="metric-card">
+            <div class="metric-icon">⭐️</div>
+            <div class="metric-value" data-target="4">4</div>
+            <div class="metric-label">Total Events & Products</div>
+          </div>
+        </div>
+
+        <div class="bento-grid categories-grid">
+          <a href="share-product.html" class="bento-card promo-product-card">
+            <div class="product-bento-content">
+              <div class="product-icon-wrapper">
+                <svg class="product-icon" viewBox="0 0 64 64" width="64" height="64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <rect x="8" y="8" width="48" height="48" rx="14" fill="#f6f8fc" stroke="#79b7ff" stroke-width="3"/>
+                  <path d="M32 20v24M20 32h24" stroke="#79b7ff" stroke-width="3"/>
+                </svg>
+              </div>
+              <h3 class="product-bento-title">Share Your Product</h3>
+              <p class="product-bento-desc">Showcase your product to our community and get featured in our Project Hub!</p>
+              <div class="product-bento-cta">Click to submit your product</div>
+            </div>
+          </a>
+
+          <div class="bento-card">
+            <h3>Share Updates & Events</h3>
+            <p style="color: #666; font-size: 0.9rem; margin: 0.5rem 0;">Keep your community informed about project milestones and upcoming events.</p>
+            <a href="project-update.html" class="updates-button">
+              Share Updates & Events
+              <span class="button-icon">→</span>
+            </a>
+            <p style="color: #666; font-size: 0.85rem; margin-top: 1rem; padding-top: 1rem; border-top: 1px solid rgba(0,0,0,0.1);">
+              <span style="color: #79b7ff;">ℹ️ Note:</span> Updates for existing projects will appear on their project cards. Standalone events and updates will be promoted through our social media channels.
+            </p>
+          </div>
+        </div>
+
+        <div class="section-header">
+          <h2>Community Projects</h2>
+        </div>
+
+        <div class="benefits-banner">
+          <span class="icon">⚙️</span>
+          <p class="message">
+            Submit your project today! As a <span class="highlight">free tier user</span>, you'll get a permanent listing in our Project Hub below, one-time social media promotion, and access to our free resource library.
+          </p>
+        </div>
+
+        <div class="projects-grid">
+          <!-- Project cards will be injected here by JS -->
+        </div>
+      </div>
+    </section>
+
+    <!-- Event Tile Template -->
+    <template id="event-tile-template">
+      <div class="event-tile">
+        <div class="event-badge"><span class="event-badge-icon">📅</span> EVENT</div>
+        <div class="event-tile-date"></div>
+        <h3 class="event-tile-title"></h3>
+        <div class="event-tile-category"></div>
+        <p class="event-tile-desc"></p>
+      </div>
+    </template>
+
+    <!-- Project Popup Template -->
+    <template id="project-popup-template">
+      <div class="popup-overlay">
+        <div class="project-popup">
+          <button class="close-button">×</button>
+          <div class="project-popup-header">
+            <h2>Project Title Goes Here</h2>
+            <div class="project-tags">
+              <span class="tag tag-type">Business</span>
+              <span class="tag tag-category">Technology</span>
+              <span class="tag tag-modality">Website</span>
+            </div>
+          </div>
+
+          <div class="team-visualization">
+            <div class="team-members" style="margin-bottom:0.5rem;">
+              <div class="team-member" style="font-size:0.92rem;">
+                <div class="member-avatar">
+                  <span class="member-icon">👤</span>
+                </div>
+                <h4 class="member-name" style="font-size:1rem;font-weight:500;margin-bottom:0.1rem;">Project Lead Name</h4>
+                <p class="member-role" style="font-size:0.92rem;color:#888;margin-bottom:0.2rem;">Project Role</p>
+                <div class="team-info">
+                  <div class="contact-details" style="font-size:0.9rem;color:#888;">
+                    <div class="contact-method">
+                      <span class="contact-icon">📧</span>
+                      <span class="contact-value">email@example.com</span>
+                    </div>
+                    <div class="contact-method">
+                      <span class="contact-icon">📱</span>
+                      <span class="contact-value">Phone number</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="activity-log" style="flex:1;min-height:120px;">
+              <h3 style="font-size:1.1rem;margin-bottom:0.5rem;">Activity Log</h3>
+              <div class="activity-list activity-log-scroll" style="min-height:80px;max-height:260px;overflow:auto;">
+                <!-- Activity items will be dynamically added here -->
+                <div class="empty-state">
+                  <p>Share new updates!</p>
+                  <a href="project-update.html" class="secondary-button">
+                    Add Update
+                    <span class="button-icon">+</span>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </template>
+
+    <!-- Project Card Template -->
+    <template id="project-card-template">
+      <div class="project-card" loading="lazy">
+        <!-- CTRL Picks badge will be injected if needed -->
+        <div class="project-header">
+          <h3 class="project-title"></h3>
+          <div class="project-tags">
+            <span class="tag tag-type"></span>
+            <span class="tag tag-category"></span>
+            <span class="tag tag-stage"></span>
+            <span class="tag tag-team"></span>
+          </div>
+        </div>
+        <p class="project-description"></p>
+      </div>
+    </template>
+  </main>
+
+  <footer class="main-footer">
+    <div class="footer-content">
+      <p>© 2025 Project CTRL | Built by and for the people without a roadmap</p>
+    </div>
+  </footer>
+
+  <script src="js/projects.js"></script>
+</body>
+</html>

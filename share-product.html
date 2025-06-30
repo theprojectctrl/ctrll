@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Share Your Product - Project CTRL</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body class="submit-page">
+  <header class="main-header">
+    <div class="header-container">
+      <a href="index.html" class="logo">Project CTRL</a>
+      <nav class="main-nav">
+        <a href="index.html">Dashboard</a>
+        <a href="projects.html">Project Hub</a>
+        <div class="dropdown">
+          <a href="resources.html" class="dropdown-trigger">Resources ▾</a>
+          <div class="dropdown-content">
+            <a href="https://stembystep.github.io/sbs/" target="_blank">STEM by Step</a>
+          </div>
+        </div>
+        <a href="https://www.instagram.com/projectctrl.co/" target="_blank" class="social-nav-link">
+          <svg class="nav-icon" viewBox="0 0 24 24" width="24" height="24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect x="2" y="2" width="20" height="20" rx="5" stroke="currentColor" stroke-width="2"/>
+            <circle cx="12" cy="12" r="5" stroke="currentColor" stroke-width="2"/>
+            <circle cx="17" cy="7" r="1" fill="currentColor"/>
+          </svg>
+        </a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="submit-section">
+    <div class="content-wrapper">
+      <div class="section-header">
+        <div class="section-tag">Share</div>
+        <h1>Share Your Product</h1>
+        <p class="section-description">Let us help showcase your product to our community</p>
+      </div>
+
+      <div class="bento-grid">
+        <div class="form-card">
+          <div class="tip-banner">
+            <span class="tip-icon">💡</span>
+            <p>Share your product with our community and get featured in our Project Hub. We'll help promote your product through our social media channels.</p>
+          </div>
+
+          <form id="product-form" action="https://formspree.io/f/mnnvvlod" method="POST" enctype="multipart/form-data">
+            <div class="form-grid">
+              <div class="form-group">
+                <label for="business-name">Business Name *</label>
+                <input type="text" id="business-name" name="business-name" required>
+              </div>
+
+              <div class="form-group">
+                <label for="business-email">Business Email *</label>
+                <input type="email" id="business-email" name="business-email" required>
+              </div>
+
+              <div class="form-group">
+                <label for="business-website">Business Website</label>
+                <input type="url" id="business-website" name="business-website">
+              </div>
+
+              <div class="form-group">
+                <label for="business-phone">Business Phone</label>
+                <input type="tel" id="business-phone" name="business-phone">
+              </div>
+
+              <div class="form-group full-width">
+                <label for="product-name">Product Name *</label>
+                <input type="text" id="product-name" name="product-name" required>
+              </div>
+
+              <div class="form-group full-width">
+                <label for="product-description">Product Description *</label>
+                <textarea id="product-description" name="product-description" required></textarea>
+              </div>
+
+              <div class="form-group full-width">
+                <label for="product-category">Product Category *</label>
+                <select id="product-category" name="product-category" required>
+                  <option value="">Select a category</option>
+                  <option value="technology">Technology</option>
+                  <option value="fashion">Fashion</option>
+                  <option value="home">Home & Living</option>
+                  <option value="beauty">Beauty & Wellness</option>
+                  <option value="food">Food & Beverage</option>
+                  <option value="other">Other</option>
+                </select>
+              </div>
+
+              <div class="form-group full-width">
+                <label>Product Images (up to 3)</label>
+                <div class="image-upload-container">
+                  <div class="image-upload-box">
+                    <input type="file" id="image1" name="image1" accept="image/*">
+                    <label for="image1" class="upload-label">
+                      <span class="upload-icon">📷</span>
+                      <span class="upload-text">Upload Image 1</span>
+                    </label>
+                  </div>
+                  <div class="image-upload-box">
+                    <input type="file" id="image2" name="image2" accept="image/*">
+                    <label for="image2" class="upload-label">
+                      <span class="upload-icon">📷</span>
+                      <span class="upload-text">Upload Image 2</span>
+                    </label>
+                  </div>
+                  <div class="image-upload-box">
+                    <input type="file" id="image3" name="image3" accept="image/*">
+                    <label for="image3" class="upload-label">
+                      <span class="upload-icon">📷</span>
+                      <span class="upload-text">Upload Image 3</span>
+                    </label>
+                  </div>
+                </div>
+              </div>
+
+              <div class="form-group full-width">
+                <label for="price-range">Price Range</label>
+                <select id="price-range" name="price-range">
+                  <option value="">Select price range</option>
+                  <option value="under-25">Under $25</option>
+                  <option value="25-50">$25 - $50</option>
+                  <option value="50-100">$50 - $100</option>
+                  <option value="100-200">$100 - $200</option>
+                  <option value="200-plus">$200+</option>
+                </select>
+              </div>
+
+              <div class="form-group full-width">
+                <label for="additional-info">Additional Information</label>
+                <textarea id="additional-info" name="additional-info" placeholder="Any other details about your product that you'd like to share..."></textarea>
+              </div>
+            </div>
+
+            <div class="form-help-notice">
+              <div class="notice-icon">💡</div>
+              <div class="notice-content">
+                <h4>Having trouble submitting?</h4>
+                <p>If you encounter any issues with the form, you can also submit your product directly via email to <a href="mailto:contact.projectctrl@gmail.com">contact.projectctrl@gmail.com</a>. Just include all the information from this form in your email.</p>
+              </div>
+            </div>
+
+            <button type="submit" class="submit-button">
+              Submit Product
+              <span class="button-icon">→</span>
+            </button>
+          </form>
+        </div>
+
+        <div class="info-card">
+          <h3>Why Share Your Product?</h3>
+          <ul class="info-list">
+            <li>
+              <span class="info-icon">🎯</span>
+              <div class="info-content">
+                <h4>Reach Our Community</h4>
+                <p>Get your product in front of our engaged community of innovators and entrepreneurs.</p>
+              </div>
+            </li>
+            <li>
+              <span class="info-icon">📱</span>
+              <div class="info-content">
+                <h4>Social Media Promotion</h4>
+                <p>Selected products will be featured on our social media channels.</p>
+              </div>
+            </li>
+            <li>
+              <span class="info-icon">💡</span>
+              <div class="info-content">
+                <h4>Feedback & Support</h4>
+                <p>Receive valuable feedback and support from our community.</p>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="main-footer">
+    <div class="footer-content">
+      <p>© 2025 Project CTRL | Built by and for the people without a roadmap</p>
+    </div>
+  </footer>
+
+  <script src="js/form-handler.js"></script>
+  <script>
+    // Initialize the form handler with automatic fallback
+    new FormHandler('product-form', {
+      formspreeEndpoint: 'https://formspree.io/f/mnnvvlod',
+      successMessage: 'Product submitted successfully! We\'ll review it and get back to you soon.'
+    });
+  </script>
+
+  <style>
+    .form-help-notice {
+      margin: 1rem 0;
+      padding: 1.5rem;
+      background: rgba(255, 193, 7, 0.05);
+      border-radius: 12px;
+      display: flex;
+      gap: 1rem;
+      border: 1px dashed rgba(255, 193, 7, 0.2);
+    }
+
+    .notice-icon {
+      font-size: 1.5rem;
+      flex-shrink: 0;
+    }
+
+    .notice-content h4 {
+      color: #333;
+      font-size: 1rem;
+      margin: 0 0 0.5rem 0;
+      font-weight: 600;
+    }
+
+    .notice-content p {
+      color: #555;
+      font-size: 0.9rem;
+      line-height: 1.5;
+      margin: 0;
+    }
+
+    .notice-content a {
+      color: #79b7ff;
+      text-decoration: none;
+      font-weight: 500;
+      transition: all 0.2s ease;
+    }
+
+    .notice-content a:hover {
+      color: #5a9eff;
+      text-decoration: underline;
+    }
+
+    .form-help-notice .notice-content a {
+      color: #ff9800;
+    }
+
+    .form-help-notice .notice-content a:hover {
+      color: #f57c00;
+    }
+  </style>
+</body>
+</html> 

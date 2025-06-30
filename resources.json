@@ -1,184 +1,20 @@
-{
-  "resources": {
-    "project-launcher": {
-      "title": "Project Launcher",
-      "description": "Quick-start templates & guides to launch your project",
-      "items": [
-        {
-          "id": "pl-001",
-          "icon": "🚀",
-          "title": "Project Starter Kit",
-          "description": "Complete toolkit for launching your project with confidence",
-          "categories": ["technology", "education", "social-impact"],
-          "price": 2.99,
-          "link": "#",
-          "viewResourceLink": "https://example.com/starter-kit",
-          "status": "coming-soon",
-          "tags": ["toolkits", "startup-building"]
-        },
-        {
-          "id": "pl-002",
-          "icon": "📋",
-          "title": "Quick-Start Guide",
-          "description": "Step-by-step instructions for project initialization",
-          "categories": ["technology", "education"],
-          "price": 0,
-          "link": "#",
-          "viewResourceLink": "https://example.com/quick-start",
-          "status": "coming-soon",
-          "tags": ["toolkits", "templates", "startup-building", "free"]
-        }
-      ]
-    },
-    "workflow-builder": {
-      "title": "Workflow Builder",
-      "description": "Industry-specific workflow templates and processes",
-      "items": [
-        {
-          "id": "wb-001",
-          "icon": "⚙️",
-          "title": "Process Framework",
-          "description": "Customizable workflow templates for your industry",
-          "categories": ["health", "technology"],
-          "price": 2.99,
-          "link": "#",
-          "viewResourceLink": "https://example.com/process-framework",
-          "status": "coming-soon",
-          "tags": ["toolkits", "templates", "productivity"]
-        },
-        {
-          "id": "wb-002",
-          "icon": "📈",
-          "title": "Optimization Guide",
-          "description": "Tools and techniques for workflow optimization",
-          "categories": ["environment", "technology"],
-          "price": 0,
-          "link": "#",
-          "viewResourceLink": "https://example.com/optimization",
-          "status": "coming-soon",
-          "tags": ["toolkits", "productivity", "free"]
-        }
-      ]
-    },
-    "development-roadmap": {
-      "title": "Development Roadmap",
-      "description": "Industry-specific development guides and milestones",
-      "items": [
-        {
-          "id": "dr-001",
-          "icon": "🎯",
-          "title": "Project Planning Framework",
-          "description": "Comprehensive framework for project development",
-          "categories": ["social-impact", "technology"],
-          "price": 2.99,
-          "link": "#",
-          "viewResourceLink": "https://example.com/planning-framework",
-          "status": "coming-soon",
-          "tags": ["roadmaps", "toolkits", "startup-building"]
-        },
-        {
-          "id": "dr-002",
-          "icon": "🗺️",
-          "title": "Strategic Roadmap",
-          "description": "Long-term planning and milestone tracking",
-          "categories": ["art-design", "technology"],
-          "price": 0,
-          "link": "#",
-          "viewResourceLink": "https://example.com/strategic-roadmap",
-          "status": "coming-soon",
-          "tags": ["roadmaps", "productivity", "free"]
-        }
-      ]
-    },
-    "project-templates": {
-      "title": "Project Templates",
-      "description": "Ready-to-use templates for your industry",
-      "items": [
-        {
-          "id": "pt-001",
-          "icon": "📄",
-          "title": "Document Templates",
-          "description": "Standardized forms and documents for your project",
-          "categories": ["food-culture", "technology"],
-          "price": 2.99,
-          "link": "#",
-          "viewResourceLink": "https://example.com/document-templates",
-          "status": "coming-soon",
-          "tags": ["templates", "student-focused"]
-        },
-        {
-          "id": "pt-002",
-          "icon": "📁",
-          "title": "Project Framework",
-          "description": "Complete project structure templates",
-          "categories": ["wellness-beauty", "technology"],
-          "price": 0,
-          "link": "#",
-          "viewResourceLink": "https://example.com/project-framework",
-          "status": "coming-soon",
-          "tags": ["templates", "toolkits", "free"]
-        }
-      ]
-    },
-    "developer-guides": {
-      "title": "Developer Guides",
-      "description": "Technical guides for different industries",
-      "items": [
-        {
-          "id": "dg-001",
-          "icon": "💻",
-          "title": "Technical Documentation",
-          "description": "Detailed guides for technical implementation",
-          "categories": ["technology", "education"],
-          "price": 2.99,
-          "link": "#",
-          "viewResourceLink": "https://example.com/tech-docs",
-          "status": "coming-soon",
-          "tags": ["self-development", "student-focused"]
-        },
-        {
-          "id": "dg-002",
-          "icon": "🔧",
-          "title": "Code Tutorials",
-          "description": "Hands-on development resources",
-          "categories": ["technology", "education"],
-          "price": 0,
-          "link": "#",
-          "viewResourceLink": "https://example.com/code-tutorials",
-          "status": "coming-soon",
-          "tags": ["self-development", "student-focused", "free"]
-        }
-      ]
-    },
-    "best-practices": {
-      "title": "Best Practices",
-      "description": "Industry-specific standards and guidelines",
-      "items": [
-        {
-          "id": "bp-001",
-          "icon": "✨",
-          "title": "Industry Standards",
-          "description": "Best practice guidelines for your field",
-          "categories": ["health", "technology"],
-          "price": 2.99,
-          "link": "#",
-          "viewResourceLink": "https://example.com/industry-standards",
-          "status": "coming-soon",
-          "tags": ["CTRL philosophy", "mentorship"]
-        },
-        {
-          "id": "bp-002",
-          "icon": "📊",
-          "title": "Quality Benchmarks",
-          "description": "Performance metrics and quality standards",
-          "categories": ["environment", "technology"],
-          "price": 0,
-          "link": "#",
-          "viewResourceLink": "https://example.com/quality-benchmarks",
-          "status": "coming-soon",
-          "tags": ["CTRL philosophy", "productivity", "free"]
-        }
-      ]
-    }
+[
+  {
+    "icon": "📈",
+    "title": "Work/Data Tracker",
+    "description": "Notion template to track your project/business's metrics, tasks, timeline, team communication, and posts.",
+    "price": 0,
+    "link": "#",
+    "viewResourceLink": "https://www.notion.com/templates/work-data-tracker",
+    "tags": ["templates", "startup-building", "free"]
+  },
+  {
+    "icon": "⚙️",
+    "title": "To-Do List",
+    "description": "A simple online task tracker; includes a progress bar, light & dark mode toggle, and separate columns with tasks within each column",
+    "price": 0,
+    "link": "#",
+    "viewResourceLink": "https://ctrlpicks.github.io/tasks/",
+    "tags": ["productivity", "free"]
   }
-} 
+] 

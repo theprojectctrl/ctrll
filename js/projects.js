@@ -393,7 +393,11 @@ class ProjectsPage {
       activityLog.forEach(activity => {
         const activityItem = document.createElement('div');
         activityItem.className = 'activity-item';
-        activityItem.textContent = activity;
+        if (activity && typeof activity === 'object' && activity.label && activity.url) {
+          activityItem.innerHTML = `<a href="${activity.url}" target="_blank" rel="noopener noreferrer" class="primary-button" style="margin: 0.25rem 0; display: inline-block;">${activity.label}</a>`;
+        } else {
+          activityItem.textContent = activity;
+        }
         activityItemsContainer.appendChild(activityItem);
       });
       activityList.insertBefore(activityItemsContainer, emptyState);
@@ -900,7 +904,11 @@ document.addEventListener('DOMContentLoaded', () => {
       project.activityLog.forEach(activity => {
         const activityItem = document.createElement('div');
         activityItem.className = 'activity-item';
-        activityItem.textContent = activity;
+        if (activity && typeof activity === 'object' && activity.label && activity.url) {
+          activityItem.innerHTML = `<a href="${activity.url}" target="_blank" rel="noopener noreferrer" class="primary-button" style="margin: 0.25rem 0; display: inline-block;">${activity.label}</a>`;
+        } else {
+          activityItem.textContent = activity;
+        }
         activityItemsContainer.appendChild(activityItem);
       });
       // Insert activity items before the empty state

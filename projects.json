@@ -1,18 +1,36 @@
 [
   {
-    "title": "Med Teen Talk",
+    "title": "Synaptic Shift",
     "type": "Non-Profit",
     "category": "Health",
-    "description": "Med Teen Talk is a teen-led initiative dedicated to educating and empowering youth through accessible content on medicine, mental health, and healthcare careers. We create weekly posts, interviews with professionals, and spotlight opportunities for teens interested in the medical field. Our mission is to make medical knowledge more relatable and build a strong, supportive community of future healthcare leaders.",
-    "leadName": "Health Youth Unity",
+    "description": "Synaptic Shift is a neuroscience-driven initiative committed to reshaping how young people engage with brain science, mental health, and policy. Through digital storytelling, interactive content, and accessible resources, we aim to empower underrepresented youth to explore neuroscience, advocate for mental health equity, and become leaders in global health. Our platform bridges research, lived experience, and community action—encouraging the next generation to step into spaces where science meets social impact.",
+    "leadName": "Synaptic Shift",
     "leadRole": "Founder",
-    "leadEmail": "HealthYouthUnity@gmail.com",
+    "leadEmail": "lfn@synapticshift.org",
     "preferredContact": "Email",
     "ctrlPick": false,
-    "activityLog": ["Instagram: https://www.instagram.com/medteentalk?igsh=ZHN5emxqa3hpaGo1&utm_source=qr
-    // https://tr.ee/yGuenTUrfp 
-    // https://tr.ee/2m2v7veOc3"],
+    "activityLog": [
+      { "label": "Instagram", "url": "https://www.instagram.com/synapticshiftorg?igsh=MTE0b2g2cWk0NDcz&utm_source=qr" },
+      { "label": "Website", "url": "https://synapticshift.carrd.co/?fbclid=PAZXh0bgNhZW0CMTEAAafjNfrF5SRTMq2v8ysd1cYivWvsHUp9CngKVCzQGbLO4Qz7L3H5S4rKdNk8vA_aem_YCOPe0Ro7GDEJQZg4lP6Rw#" },
+      { "label": "Substack", "url": "https://substack.com/@behindthesynapse?r=5u2qnk&utm_campaign=profile&utm_medium=profile-page" }
+    ],
     "subtitle": "Non-Profit"
+  },
+  {
+    "title": "Med Teen Talk",
+    "type": "Initiative",
+    "category": "Health",
+    "description": "Med Teen Talk is a teen-led initiative dedicated to educating and empowering youth through accessible content on medicine, mental health, and healthcare careers. We create weekly posts, interviews with professionals, and spotlight opportunities for teens interested in the medical field. Our mission is to make medical knowledge more relatable and build a strong, supportive community of future healthcare leaders.",
+    "leadName": "Med Teen Talk",
+    "leadRole": "Founder",
+    "leadEmail": "https://www.instagram.com/medteentalk?igsh=ZHN5emxqa3hpaGo1&utm_source=qr",
+    "preferredContact": "Email",
+    "ctrlPick": false,
+    "activityLog": [
+      { "label": "Instagram", "url": "https://www.instagram.com/medteentalk?igsh=ZHN5emxqa3hpaGo1&utm_source=qr" },
+      { "label": "Linktree", "url": "https://tr.ee/yGuenTUrfp" }
+    ],
+    "subtitle": "Teen-led Initiative"
   },
    {
     "title": "Placeholder Service Offering",

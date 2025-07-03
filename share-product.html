@@ -46,11 +46,15 @@
             <p>Share your service with our community and get featured in our Project Hub. We'll help promote your service through our social media channels.<br><span style='color:#888;font-size:0.95em;'>Example: You can offer coding, marketing, handywork, design, tutoring, and more!</span></p>
           </div>
 
-          <form id="service-form" action="https://formspree.io/f/mnnvvlod" method="POST" enctype="multipart/form-data">
+          <form id="service-form" action="https://usebasin.com/f/c77b477cce6b" method="POST" enctype="multipart/form-data">
             <div class="form-grid">
               <div class="form-group full-width">
                 <label for="business-name">Business Name (optional)</label>
                 <input type="text" id="business-name" name="business-name">
+              </div>
+              <div class="form-group full-width">
+                <label for="contact-email">Contact Email *</label>
+                <input type="email" id="contact-email" name="contact-email" required>
               </div>
               <div class="form-group full-width">
                 <label for="service-name">Service Name *</label>
@@ -166,7 +170,7 @@
   <script>
     // Initialize the form handler with automatic fallback
     new FormHandler('service-form', {
-      formspreeEndpoint: 'https://formspree.io/f/mnnvvlod',
+      formspreeEndpoint: 'https://usebasin.com/f/c77b477cce6b',
       successMessage: 'Service submitted successfully! We\'ll review it and get back to you soon.'
     });
   </script>

@@ -32,28 +32,6 @@
     ],
     "subtitle": "Teen-led Initiative"
   },
-   {
-    "title": "Placeholder Service Offering",
-    "subtitle": "Service Offering",
-    "category": "Technology",
-    "description": "This is a sample service offering to demonstrate how service tiles appear in the Project Hub. You can use this as a template for your own service listings.",
-    "leadName": "Jane Doe",
-    "leadRole": "Service Provider",
-    "leadEmail": "janedoe@example.com",
-    "ctrlPick": false
-  },
-{
-    "title": "Research Paper",
-    "description": "I, along with a few of my fellow high school students, recently completed a research paper on financial literacy. In our paper, we explored how a significant portion of the population lacks basic awareness about managing finances and tends to be lenient or careless with money. The research highlights the urgent need for better financial education, especially among youth and underserved communities. We've finished writing the paper and compiled a well-structured document, including a survey we conducted...",
-    "date": "2025-6-18",
-    "category": "Social Impact",
-    "eventCategory": "Volunteering & Service",
-    "color": "#cfe9ff",
-    "textColor": "#315F90",
-    "link": "https://forms.gle/zKhBJkjSKJXFKqYCA",
-    "isEvent": true,
-    "subtitle": "Event"
-},
   {
     "title": "Health Youth Unity",
     "type": "Non-Profit",
@@ -111,60 +89,5 @@
     "preferredContact": "Both",
     "ctrlPick": true,
     "subtitle": "Non-Profit"
-  },
-  {
-    "title": "TikTok Account",
-    "type": "Freelance",
-    "category": "Art / Design",
-    "stage": "Launched",
-    "description": "Project description goes here. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore.",
-    "leadName": "Michael Jordan",
-    "leadRole": "Founder",
-    "leadEmail": "michael@example.com",
-    "leadPhone": "555-0126",
-    "preferredContact": "Phone",
-    "ctrlPick": false,
-    "subtitle": "Freelance"
-  },
-  {
-    "title": "ProjectFlow Pro",
-    "type": "Product",
-    "category": "Technology",
-    "stage": "Launched",
-    "description": "A powerful project management tool designed to streamline your workflow and boost team productivity.",
-    "leadName": "Sarah Chen",
-    "leadRole": "Product Manager",
-    "leadEmail": "sarah@example.com",
-    "preferredContact": "Email",
-    "ctrlPick": true,
-    "website": "https://example.com/product",
-    "isProduct": true,
-    "productPrice": "$49/month",
-    "businessName": "TechFlow Solutions",
-    "subtitle": "Product"
-  },
-  {
-    "title": "Placeholder Event 1",
-    "description": "This is a sample event for demonstration purposes.",
-    "date": "2024-12-01",
-    "category": "Workshops & Skill Building",
-    "eventCategory": "Workshops & Skill Building",
-    "color": "#ffdaec",
-    "textColor": "#ca5e92",
-    "link": "#",
-    "isEvent": true,
-    "subtitle": "Event"
-  },
-  {
-    "title": "Placeholder Event 2",
-    "description": "Another sample event to show event tile styling.",
-    "date": "2024-12-15",
-    "category": "Networking & Panels",
-    "eventCategory": "Networking & Panels",
-    "color": "#fff3cd",
-    "textColor": "#856404",
-    "link": "#",
-    "isEvent": true,
-    "subtitle": "Event"
   }
 ] 

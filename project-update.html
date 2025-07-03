@@ -83,7 +83,7 @@
             <p>Share your project updates or upcoming events with our community!</p>
           </div>
 
-          <form id="update-form" action="https://formspree.io/f/movwdqka" method="POST">
+          <form id="event-update-form" action="https://usebasin.com/f/6d6ea47bb924" method="POST" enctype="multipart/form-data">
             <div class="form-grid">
               <div class="form-group">
                 <label for="title" class="required-field">Event Name</label>
@@ -140,6 +140,10 @@
               <div class="form-group full-width">
                 <label for="additional-info">Additional Info (optional)</label>
                 <textarea id="additional-info" name="additional-info" placeholder="Any other info..."></textarea>
+              </div>
+              <div class="form-group full-width">
+                <label for="contact-email">Contact Email *</label>
+                <input type="email" id="contact-email" name="contact-email" required>
               </div>
             </div>
 
@@ -240,8 +244,8 @@
     });
 
     // Initialize the form handler with automatic fallback
-    new FormHandler('update-form', {
-      formspreeEndpoint: 'https://formspree.io/f/movwdqka',
+    new FormHandler('event-update-form', {
+      formspreeEndpoint: 'https://usebasin.com/f/6d6ea47bb924',
       successRedirect: 'projects.html?status=success&type=update',
       successMessage: 'Update submitted successfully! Redirecting to Project Hub...'
     });

@@ -1,5 +1,38 @@
 [
   {
+    "title": "The Environmental Club",
+    "type": "Community",
+    "category": "Environment",
+    "description": "The Environment Club is a youth-led organization founded by enthusiastic young people who have an immense concern for the environment. It all comes down to preserving our home's distinctive landscapes, incredible wildlife, and inherent strength. Our goal is to bring about tangible change, raise awareness, and construct a more sustainable, compassionate, and vibrant future.",
+    "leadName": "The Environmental Club",
+    "leadRole": "Founder",
+    "leadEmail": "thenvironmentalclub.india@gmail.com",
+    "preferredContact": "Email",
+    "ctrlPick": false,
+    "activityLog": [
+      { "label": "Instagram", "url": "https://www.instagram.com/thenvironmentalclub?igsh=MTBwNzN5Mm1vNGt6ZA==" }
+  
+    ],
+    "subtitle": "Community"
+  },
+  {
+    "title": "The Curious Column",
+    "type": "Community",
+    "category": "Education",
+    "description": "The Curious Column is a student-led legal literacy newspaper that simplifies legal concepts for children. Through engaging content and real-world examples, we help young readers understand their rights and the law in a fun, age-appropriate way. Our goal is to make legal education accessible and relevant in today’s changing world.",
+    "leadName": "The Curious Column",
+    "leadRole": "Founder",
+    "leadEmail": "info.curiouscolumn@gmail.com",
+    "preferredContact": "Email",
+    "ctrlPick": false,
+    "activityLog": [
+      { "label": "Instagram", "url": "https://www.instagram.com/the_curious_column?igsh=NHk3M3I4YzkxdW52&utm_source=qr" },
+      { "label": "Executive Applications due July 15", "url": "https://docs.google.com/forms/d/e/1FAIpQLSdTb516R8lnkus43eeMQ6eR9kxOah5mgYnX1iGhxtaAmk60cg/viewform?fbclid=PAQ0xDSwLTgFlleHRuA2FlbQIxMQABp6-Ok3zuovc3R7DSrf1dAH8E4Yg5U5FG3lHI1NbY10lDjdTUmb1JNc23SYr1_aem_74NdJhDiBPYb97PFMHjb1Q" }
+      
+    ],
+    "subtitle": "Community"
+  },
+  {
     "title": "Synaptic Shift",
     "type": "Non-Profit",
     "category": "Health",

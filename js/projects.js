@@ -377,6 +377,39 @@ class ProjectsPage {
     popupTags.innerHTML = '';
     tags.forEach(tag => popupTags.appendChild(tag));
     
+    // Handle services section for service offerings
+    const servicesSection = popup.querySelector('.services-section');
+    const activityLogSection = popup.querySelector('.activity-log');
+    if (card.dataset.isService === 'true' && card.dataset.services) {
+      servicesSection.style.display = 'block';
+      activityLogSection.style.display = 'none';
+      
+      // Populate services list (up to 3)
+      const servicesList = popup.querySelector('.services-list');
+      let services = [];
+      try {
+        services = JSON.parse(card.dataset.services);
+      } catch (e) {}
+      
+      const servicesToShow = services.slice(0, 3);
+      servicesList.innerHTML = servicesToShow.map(service => 
+        `<div style="display:inline-block;background:rgba(121,183,255,0.1);color:#79b7ff;padding:0.25rem 0.75rem;border-radius:100px;font-size:0.85rem;margin:0.25rem 0.25rem 0.25rem 0;font-weight:500;">• ${service}</div>`
+      ).join('');
+      
+      // Add service details if available
+      if (card.dataset.serviceDetails) {
+        popup.querySelector('.service-details-content').textContent = card.dataset.serviceDetails;
+      }
+      
+      // Add service note if available
+      if (card.dataset.serviceNote) {
+        popup.querySelector('.service-note').textContent = card.dataset.serviceNote;
+      }
+    } else {
+      servicesSection.style.display = 'none';
+      activityLogSection.style.display = 'block';
+    }
+    
     this.setupContactInfo(popup, leadEmail, leadPhone);
 
     const activityList = popup.querySelector('.activity-list');
@@ -800,6 +833,13 @@ document.addEventListener('DOMContentLoaded', () => {
           tags.innerHTML += `<span class="tag tag-category">${service.category}</span>`;
         }
         card.querySelector('.project-description').textContent = service.description || '';
+        
+        // Add click note for services
+        const clickNote = document.createElement('div');
+        clickNote.style.cssText = 'font-size:0.85rem;color:#79b7ff;margin-top:0.5rem;font-weight:500;';
+        clickNote.innerHTML = '💡 Click to view services & timelines';
+        card.appendChild(clickNote);
+        
         card.dataset.leadName = service.leadName || '';
         card.dataset.leadRole = service.leadRole || '';
         card.dataset.leadEmail = service.leadEmail || '';
@@ -818,6 +858,10 @@ document.addEventListener('DOMContentLoaded', () => {
         card.dataset.ctrlPick = service.ctrlPick ? 'true' : '';
         card.dataset.website = service.website || '';
         card.dataset.activityLog = service.activityLog ? JSON.stringify(service.activityLog) : '';
+        card.dataset.isService = 'true';
+        card.dataset.services = service.services ? JSON.stringify(service.services) : '';
+        card.dataset.serviceDetails = service.serviceDetails || '';
+        card.dataset.serviceNote = service.serviceNote || '';
         card.addEventListener('click', () => projectsPage.handleCardClick(card));
         grid.appendChild(card);
       }
@@ -874,6 +918,30 @@ document.addEventListener('DOMContentLoaded', () => {
         tags.innerHTML += `<span class="tag tag-status">${st}</span>`;
       });
     }
+    
+    // Handle services section for service offerings
+    const servicesSection = popup.querySelector('.services-section');
+    if (project.isService && project.services) {
+      servicesSection.style.display = 'block';
+      
+      // Populate services list (up to 3)
+      const servicesList = popup.querySelector('.services-list');
+      const servicesToShow = project.services.slice(0, 3);
+      servicesList.innerHTML = servicesToShow.map(service => 
+        `<div style="display:inline-block;background:rgba(121,183,255,0.1);color:#79b7ff;padding:0.25rem 0.75rem;border-radius:100px;font-size:0.85rem;margin:0.25rem 0.25rem 0.25rem 0;font-weight:500;">• ${service}</div>`
+      ).join('');
+      
+      // Add service details if available
+      if (project.serviceDetails) {
+        popup.querySelector('.service-details-content').textContent = project.serviceDetails;
+      }
+      
+      // Add service note if available
+      if (project.serviceNote) {
+        popup.querySelector('.service-note').textContent = project.serviceNote;
+      }
+    }
+    
     // Add website button if present, right after tags
     if (project.website) {
       const btn = document.createElement('a');

@@ -2,26 +2,31 @@
   {
     "title": "Gradient Colours",
     "subtitle": "Service Offering",
+    "type": "Service",
     "category": "Art / Design",
-    "description": "Gradient Colours collaborates with individuals, startups, and nonprofit organizations to provide professional marketing and design services at no cost. (Note: We're not an apparel company; we only make the designs. Whoever requests our services has to handle the printing in terms of. merchandise, etc.) Below are estimated times for various design services that we provide. Please keep in mind that each projected timeline is measured from when your application is accepted, not submitted.
-
-Logos: 2-3 weeks
-Website design: 2-3 months
-Book covers: 1-1.5 months
-Brand packages*: 2-3 months
-Brochures: 2 weeks
-Business cards: 1 week
-Templates: 1-2 weeks
-Posters/banners: 1-2 weeks
-Merchandise: 2-3 weeks
-Social media posts: 1-2 weeks
-Event invitations: 1 week
-
-*Brand packages include a main logo, two logo variations, color palette, and typography for headings, subheadings, and body text. Elements can be added or subtracted based on client needs and the timeline will be adjusted as necessary..",
+    "description": "Gradient Colours collaborates with individuals, startups, and nonprofit organizations to provide professional marketing and design services at no cost. We also offer aspiring designers and marketers hands-on experience through real-world projects, helping them build portfolios and gain valuable industry knowledge.",
     "leadName": "Gradient Colours",
-    "leadRole": "Service Provider",
-    "leadEmail": "thegradientcolours@gmail.com",
-    "ctrlPick": false
+    "leadRole": "Design Team",
+    "leadEmail": "contact.projectctrl@gmail.com",
+    "preferredContact": "Email",
+    "ctrlPick": false,
+    "isService": true,
+    "services": [
+      "Logos",
+      "Banners", 
+      "Brochures",
+      "Merch design",
+      "Magazine layouts",
+      "Menu design",
+      "YouTube Thumbnails",
+      "Sticker designs"
+    ],
+    "serviceDetails": "Below are estimated times for various design services that we provide. None of these are set in stone, and we will inform you when to expect a final product when you apply for our services. If you have a request that is not listed below, we are always happy to fulfill those and will provide you with a timeline accordingly.\n\nPlease keep in mind that each projected timeline is measured from when your application is accepted, not submitted.\n\n• Logos: 2-3 weeks\n• Website design: 2-3 months\n• Book covers: 1-1.5 months\n• Brand packages*: 2-3 months\n• Brochures: 2 weeks\n• Business cards: 1 week\n• Templates: 1-2 weeks\n• Posters/banners: 1-2 weeks\n• Merchandise: 2-3 weeks\n• Social media posts: 1-2 weeks\n• Event invitations: 1 week\n\n*Brand packages include a main logo, two logo variations, color palette, and typography for headings, subheadings, and body text. Elements can be added or subtracted based on client needs and the timeline will be adjusted as necessary.",
+    "serviceNote": "Note: We're not an apparel company; we only make the designs. Whoever requests our services has to handle the printing in terms of merchandise, etc.",
+    "activityLog": [
+      { "label": "Instagram", "url": "https://www.instagram.com/gradientcolours_?utm_source=ig_web_button_share_sheet&igsh=MW9scjFydWhleGU1OA==" }
+      
+    ]
   },
 {
     "title": "One Leaf Time",

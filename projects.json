@@ -1,5 +1,80 @@
 [
   {
+    "title": "Gradient Colours",
+    "subtitle": "Service Offering",
+    "category": "Art / Design",
+    "description": "Gradient Colours collaborates with individuals, startups, and nonprofit organizations to provide professional marketing and design services at no cost. (Note: We're not an apparel company; we only make the designs. Whoever requests our services has to handle the printing in terms of. merchandise, etc.) Below are estimated times for various design services that we provide. Please keep in mind that each projected timeline is measured from when your application is accepted, not submitted.
+
+Logos: 2-3 weeks
+Website design: 2-3 months
+Book covers: 1-1.5 months
+Brand packages*: 2-3 months
+Brochures: 2 weeks
+Business cards: 1 week
+Templates: 1-2 weeks
+Posters/banners: 1-2 weeks
+Merchandise: 2-3 weeks
+Social media posts: 1-2 weeks
+Event invitations: 1 week
+
+*Brand packages include a main logo, two logo variations, color palette, and typography for headings, subheadings, and body text. Elements can be added or subtracted based on client needs and the timeline will be adjusted as necessary..",
+    "leadName": "Gradient Colours",
+    "leadRole": "Service Provider",
+    "leadEmail": "thegradientcolours@gmail.com",
+    "ctrlPick": false
+  },
+{
+    "title": "One Leaf Time",
+    "type": "Non-Profit",
+    "category": "Education",
+    "description": "One Leaf Time is dedicated to spreading awareness against the many environmental factors that harms our planet, the Earth. We strive to advocate for our planet, as we only have one home. We must take action.",
+   "leadName": "One Leaf Time",  
+  "leadRole": "Founder",
+    "leadEmail": "oneleaftime@gmail.com",
+    "preferredContact": "Email",
+    "ctrlPick": false,
+    "activityLog": [
+      { "label": "No Links", "url": "#" }
+  
+    ],
+    "subtitle": "Non-Profit"
+  },
+  
+  {
+    "title": "Gradient Colours",
+    "type": "Non-Profit",
+    "category": "Art / Design",
+    "description": "We’re a youth-led organization officially formed in March 2025 and is fiscally sponsored by the Hack Club, a 501(c)(3) non-profit organization. We provide essential creative services, including graphic design, website development, branding, and marketing strategies, at no cost to those in need. Additionally, we create opportunities for aspiring high school designers to gain hands-on experience through real client projects, allowing them to develop their skills while contributing to meaningful causes.
+Our vision is to cultivate a future where financial constraints do not hinder progress and where young designers are empowered to make an impact through their creativity.",
+    "leadName": "Gradient Colours",
+    "leadRole": "Founder",
+    "leadEmail": "thegradientcolours@gmail.com",
+    "preferredContact": "Email",
+    "ctrlPick": false,
+    "activityLog": [
+      { "label": "Instagram", "url": "https://www.instagram.com/gradientcolours_?utm_source=ig_web_button_share_sheet&igsh=MW9scjFydWhleGU1OA==" }
+  
+    ],
+    "subtitle": "Non-Profit"
+  },
+  
+  {
+    "title": "The Investment Club",
+    "type": "Community",
+    "category": "Education",
+    "description": "The Investment Club is a student-led group where I teach the basics of investing, how the stock market works, and how to analyze companies. I also explain how to build a strong portfolio and make smart financial decisions. The goal is to spark interest in finance and inspire members to consider careers in investing, business, or financial planning.",
+    "leadName": "The Investment Club",
+    "leadRole": "Founder",
+    "leadEmail": "talaaalswailim@icloud.com",
+    "preferredContact": "Email",
+    "ctrlPick": false,
+    "activityLog": [
+      { "label": "Instagram", "url": "https://www.instagram.com/theinvest.club?igsh=MWNzd3hjNmF1Y3A0dg%3D%3D&utm_source=qr" }
+  
+    ],
+    "subtitle": "Community"
+  },
+  {
     "title": "The Environmental Club",
     "type": "Community",
     "category": "Environment",
